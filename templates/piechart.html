@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<canvas id="pie-chart" width="800" height="450"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+<script>
+new Chart(document.getElementById("pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["cluster--1", "cluster--2", "cluster--3", "cluster--4"],
+      datasets: [{
+        label: "Pie chart(coordinates)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: {{list}}
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Data shown in pie chart'
+      }
+    }
+});
+
+
+</script>
+
+</html>
+<br/><br/>
+NO OF POINTS IN EACH CLUSTER
+{% for x in list %}
+        {{ x }} <br>
+{% endfor %}
